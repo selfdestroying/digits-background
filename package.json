@@ -1,6 +1,6 @@
 {
     "name": "@selfdestroying/glyphs",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Interactive, customizable animated grid of glyphs on HTML5 Canvas. Zero dependencies, ES modules.",
     "type": "module",
     "main": "./src/index.js",
