@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+        <meta
+            name="description"
+            content="Интерактивный фон из символов на HTML5 Canvas."
+        />
+        <meta name="color-scheme" content="dark" />
+        <title>Digits Background</title>
+        <link rel="stylesheet" href="./demo/styles.css" />
+    </head>
+    <body>
+        <canvas id="bg" aria-hidden="true"></canvas>
+        <div id="fps-counter" class="fps-counter" aria-live="polite">
+            -- FPS
+        </div>
+        <aside id="panel" class="dbg-panel" aria-label="Animation control panel"></aside>
+
+        <script type="module" src="./demo/main.js"></script>
+    </body>
+</html>

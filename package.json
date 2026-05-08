@@ -1,0 +1,52 @@
+{
+    "name": "digits-background",
+    "version": "1.0.0",
+    "description": "Interactive, customizable digits/glyphs background animation on HTML5 Canvas. Zero dependencies, ES modules.",
+    "type": "module",
+    "main": "./src/index.js",
+    "module": "./src/index.js",
+    "exports": {
+        ".": {
+            "import": "./src/index.js",
+            "default": "./src/index.js"
+        },
+        "./DigitsBackground": "./src/DigitsBackground.js",
+        "./ControlPanel": "./src/ControlPanel.js",
+        "./defaults": "./src/defaults.js",
+        "./color-utils": "./src/color-utils.js"
+    },
+    "files": [
+        "src/",
+        "demo/",
+        "index.html",
+        "README.md",
+        "LICENSE"
+    ],    "keywords": [
+        "canvas",
+        "animation",
+        "background",
+        "digits",
+        "matrix",
+        "interactive",
+        "ui",
+        "hero",
+        "landing"
+    ],
+    "author": "",
+    "license": "MIT",
+    "engines": {
+        "node": ">=16"
+    },
+    "scripts": {
+        "serve": "npx --yes http-server -c-1 -p 5173 .",
+        "lint": "node --check src/DigitsBackground.js && node --check src/ControlPanel.js && node --check src/color-utils.js && node --check src/defaults.js && node --check src/index.js && node --check demo/main.js",
+        "test": "node scripts/smoke.mjs"
+    },
+    "sideEffects": false,
+    "browserslist": [
+        "last 2 Chrome versions",
+        "last 2 Firefox versions",
+        "last 2 Safari versions",
+        "last 2 Edge versions"
+    ]
+}
