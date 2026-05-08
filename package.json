@@ -1,7 +1,7 @@
 {
-    "name": "digits-background",
+    "name": "@selfdestroying/glyphs",
     "version": "1.0.0",
-    "description": "Interactive, customizable digits/glyphs background animation on HTML5 Canvas. Zero dependencies, ES modules.",
+    "description": "Interactive, customizable animated grid of glyphs on HTML5 Canvas. Zero dependencies, ES modules.",
     "type": "module",
     "main": "./src/index.js",
     "module": "./src/index.js",
@@ -21,10 +21,12 @@
         "index.html",
         "README.md",
         "LICENSE"
-    ],    "keywords": [
+    ],
+    "keywords": [
         "canvas",
         "animation",
         "background",
+        "glyphs",
         "digits",
         "matrix",
         "interactive",
@@ -32,8 +34,19 @@
         "hero",
         "landing"
     ],
-    "author": "",
+    "author": "selfdestroying",
     "license": "MIT",
+    "homepage": "https://selfdestroying.github.io/glyphs/",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/selfdestroying/glyphs.git"
+    },
+    "bugs": {
+        "url": "https://github.com/selfdestroying/glyphs/issues"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
     "engines": {
         "node": ">=16"
     },

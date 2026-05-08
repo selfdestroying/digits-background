@@ -1,4 +1,4 @@
-# digits-background
+# @selfdestroying/glyphs
 
 Interactive, customizable animated grid of glyphs rendered on a single HTML5
 `<canvas>`. Zero dependencies, zero build step, ships as plain ES modules
@@ -12,7 +12,7 @@ control panel).
 </p>
 
 <p align="center">
-    <a href="https://selfdestroying.github.io/digits-background/"><strong>▶ Live demo</strong></a>
+    <a href="https://selfdestroying.github.io/glyphs/"><strong>▶ Live demo</strong></a>
 </p>
 
 ## Highlights
@@ -31,6 +31,18 @@ control panel).
 
 ---
 
+## Install
+
+```bash
+npm install @selfdestroying/glyphs
+# or
+pnpm add @selfdestroying/glyphs
+# or
+yarn add @selfdestroying/glyphs
+```
+
+No build step is required — the package ships as native ES modules.
+
 ## Quick start
 
 ### 1. Drop the module into your page
@@ -38,7 +50,7 @@ control panel).
 ```html
 <canvas id="bg"></canvas>
 <script type="module">
-    import { DigitsBackground } from "./src/index.js";
+    import { DigitsBackground } from "@selfdestroying/glyphs";
 
     new DigitsBackground(document.getElementById("bg"), {
         pointerInteraction: true,
@@ -46,6 +58,16 @@ control panel).
         colorMax: "#69b7ff",
         glow: 12,
     });
+</script>
+```
+
+If you are not using a bundler and prefer to load the package straight from
+a CDN, any npm CDN works:
+
+```html
+<script type="module">
+    import { DigitsBackground } from "https://esm.sh/@selfdestroying/glyphs";
+    // or: "https://cdn.jsdelivr.net/npm/@selfdestroying/glyphs/+esm"
 </script>
 ```
 
@@ -64,7 +86,7 @@ Any static server works — `npx serve`, `python -m http.server`, VS Code's
 Live Server extension, etc. The hosted demo on GitHub Pages works the same
 way, just without the local step:
 
-> https://selfdestroying.github.io/digits-background/
+> https://selfdestroying.github.io/glyphs/
 
 ---
 
