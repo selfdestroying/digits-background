@@ -195,6 +195,7 @@ export class DigitsBackground {
 
             switch (key) {
                 case "fontSize":
+                case "cellSize":
                 case "maxPixelRatio":
                     needsResize = true;
                     break;
@@ -395,8 +396,12 @@ export class DigitsBackground {
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
         const fontSize = Math.max(1, this.options.fontSize);
-        const columns = Math.max(1, Math.ceil(width / fontSize));
-        const rows = Math.max(1, Math.ceil(height / fontSize));
+        const cellSize = Math.max(
+            1,
+            this.options.cellSize > 0 ? this.options.cellSize : fontSize,
+        );
+        const columns = Math.max(1, Math.ceil(width / cellSize));
+        const rows = Math.max(1, Math.ceil(height / cellSize));
         this._columns = columns;
         this._rows = rows;
         this._cellCount = columns * rows;
@@ -423,7 +428,9 @@ export class DigitsBackground {
         }
 
         const fontSize = this.options.fontSize;
-        const half = fontSize / 2;
+        const cellSize =
+            this.options.cellSize > 0 ? this.options.cellSize : fontSize;
+        const half = cellSize / 2;
         const columns = this._columns;
         const rows = this._rows;
         const centerX = this._centerX;
@@ -431,9 +438,9 @@ export class DigitsBackground {
 
         let i = 0;
         for (let y = 0; y < rows; y++) {
-            const cy = y * fontSize + half;
+            const cy = y * cellSize + half;
             for (let x = 0; x < columns; x++) {
-                centerX[i] = x * fontSize + half;
+                centerX[i] = x * cellSize + half;
                 centerY[i] = cy;
                 i++;
             }
@@ -559,8 +566,9 @@ export class DigitsBackground {
         const mouseX = this._mouseX;
         const mouseY = this._mouseY;
         const fontSize = opts.fontSize;
-        const inner = opts.innerRadius * fontSize;
-        const outer = opts.outerRadius * fontSize;
+        const unit = opts.cellSize > 0 ? opts.cellSize : fontSize;
+        const inner = opts.innerRadius * unit;
+        const outer = opts.outerRadius * unit;
         const innerSq = inner * inner;
         const outerSq = outer * outer;
         const range = outer - inner;

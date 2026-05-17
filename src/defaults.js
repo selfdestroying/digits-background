@@ -14,6 +14,7 @@ export const DEFAULT_ALPHABET =
  * @property {string} fontFamily            CSS font-family.
  * @property {string} fontWeight            CSS font-weight.
  * @property {number} fontSize              Base glyph size in CSS pixels.
+ * @property {number} cellSize              Grid cell size in CSS pixels. 0 = follow fontSize.
  * @property {number} startOpacity          Baseline opacity for every cell.
  * @property {boolean} pointerInteraction   Enable pointer-driven highlights.
  * @property {number} innerRadius           Full-intensity radius, measured in font sizes.
@@ -47,6 +48,7 @@ export const DEFAULT_OPTIONS = Object.freeze({
     fontFamily: "monospace",
     fontWeight: "normal",
     fontSize: 36,
+    cellSize: 0,
     startOpacity: 0.2,
 
     pointerInteraction: false,
@@ -87,6 +89,7 @@ export const DEFAULT_OPTIONS = Object.freeze({
  */
 export const OPTION_CONSTRAINTS = Object.freeze({
     fontSize: { min: 10, max: 100, step: 1 },
+    cellSize: { min: 12, max: 120, step: 1 },
     startOpacity: { min: 0, max: 1, step: 0.01 },
     innerRadius: { min: 0, max: 100, step: 1 },
     outerRadius: { min: 1, max: 100, step: 1 },
